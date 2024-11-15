@@ -2,8 +2,13 @@
 const { pathname } = Astro.url;
 ---
 
-<header class="w-full bg-[#31363F] h-[80px] flex items-center justify-center rounded-xl">
-    <nav>
+<header class="w-full bg-[#31363F] h-[80px] rounded-xl flex items-center px-10">
+    <nav class="flex items-center justify-between w-full">
+        <div>
+            <h2>
+                <a href="/" class="text-[2rem] w-full text-start font-bold text-[#76ABAE]">Ahmedx3</a>
+            </h2>
+        </div>
         <ul class="flex items-center gap-2 text-white font-bold text-[1.1rem] list-none">
             <li class="active:scale-90 transition-all">
                 <a class="cursor-pointer z-10 p-2 w-[100px] text-white text-center h-[50px] flex items-center justify-center relative overflow-hidden group rounded-md" href="/">
@@ -46,5 +51,7 @@ const { pathname } = Astro.url;
                 </a>
             </li>
         </ul>
+
+        <div></div>
     </nav>
 </header>

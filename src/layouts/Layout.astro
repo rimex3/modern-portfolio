@@ -15,10 +15,14 @@ const { title } = Astro.props;
         <meta name="description" content="Astro description" />
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="generator" content={Astro.generator} />
+        <meta
+            name="generator"
+            content={"Passionate software developer specializing in full-stack web development. Expert in React, Node.js, and TypeScript, creating scalable, user-friendly applications. Explore my projects and get in touch for collaborations or inquiries."}
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="/prism-coldark.css" />
         <title>{title}</title>
     </head>
     <body class="bg-[#222831]">
@@ -35,22 +39,21 @@ const { title } = Astro.props;
 </html>
 
 <style is:global>
-
     html {
         font-family: "Cairo", sans-serif;
         font-weight: normal;
         font-style: normal;
     }
 
-   * {
-       margin: 0;
-       padding: 0;
-       box-sizing: border-box;
-   }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-   a {
-       text-decoration: none;
-   }
+    a {
+        text-decoration: none;
+    }
 
     .swup-progress-bar {
         height: 1px;
@@ -95,5 +98,33 @@ const { title } = Astro.props;
     #items.is-leaving .list_item {
         transition-timing-function: ease-in;
         transition-duration: var(--duration-leave);
+    }
+
+    ::selection {
+        background-color: #3c526d;
+        color: white;
+    }
+
+    ::-moz-selection {
+        background-color: #3c526d;
+        color: white;
+    }
+
+    ::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: #3c526d;
+        border-radius: 30px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: #2a3c4d;
+    }
+
+    ::-webkit-scrollbar-corner {
+        background-color: #2a3c4d;
     }
 </style>

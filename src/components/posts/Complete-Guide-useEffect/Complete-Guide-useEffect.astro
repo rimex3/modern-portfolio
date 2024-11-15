@@ -1,11 +1,10 @@
 ---
 import BlogLayout from "../../../layouts/BlogLayout.astro";
-
-const matches = await import.meta.glob(["./index.mdx", "./code.mdx"], { eager: true });
+import { Prism } from "@astrojs/prism";
+import { code } from "./code.astro";
+const matches = await import.meta.glob("./index.mdx", { eager: true });
 const posts = Object.values(matches) as any[];
-
-const code = posts[0];
-const content = posts[1];
+const content = posts[0];
 ---
 
 <BlogLayout headers={content.getHeadings()}>
@@ -16,11 +15,36 @@ const content = posts[1];
                     <div class="mt-4" dir="rtl">
                         <content.default />
                     </div>
-                    <div>
-                        <code.default />
-                    </div>
+                    <Prism lang="jsx" code={code} class="w-full overflow-hidden rounded-lg" />
                 </div>
             )
         }
     </div>
 </BlogLayout>
+
+<style is:global>
+    /* src/styles/prism-line-numbers.css */
+
+    .shiki pre {
+        counter-reset: line;
+    }
+
+    .shiki pre code {
+        display: block;
+    }
+
+    .shiki pre code span {
+        display: block;
+    }
+
+    .shiki pre code span::before {
+        content: counter(line);
+        counter-increment: line;
+        display: inline-block;
+        width: 2em;
+        margin-left: -2em;
+        padding-right: 1em;
+        text-align: right;
+        color: #6c6c6c;
+    }
+</style>

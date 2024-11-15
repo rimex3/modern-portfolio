@@ -24,12 +24,7 @@ export default defineConfig({
             optimize: true,
         }),
     ],
-
     markdown: {
-        shikiConfig: {
-            theme: "dracula",
-            wrap: true,
-            transformers: ["prettier"],
-        },
+        syntaxHighlight: "prism",
     },
 });

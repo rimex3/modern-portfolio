@@ -1,5 +1,6 @@
 ---
 import Blog from "../Blog/Blog.astro";
+import { blogsPeek } from "./Blogs.constants.astro";
 
 type BlogTypes = "Web Development" | "Mobile Development" | "UI/UX" | "Other";
 type BlogTags = "astro" | "typescript" | "javascript" | "tailwindcss" | "react" | "next" | "vue" | "flutter" | "other";
@@ -13,16 +14,7 @@ export interface BlogsProps {
     createAt: string;
 }
 
-export const blogsPeek: BlogsProps[] = [
-    {
-        title: "اول مدونة في الموقع",
-        blogId: "first-blog-in-the-site",
-        desc: "السلام عليكم هذة اول مدونة في الموقع",
-        createAt: "2023-01-01",
-        tags: ["astro", "typescript"],
-        type: "Web Development",
-    },
-];
+
 ---
 
 <div class="w-full">
