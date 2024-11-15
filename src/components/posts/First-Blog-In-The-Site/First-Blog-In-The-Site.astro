@@ -1,8 +1,8 @@
 ---
 import BlogLayout from "../../../layouts/BlogLayout.astro";
-import { Prism } from "@astrojs/prism";
+import { Code } from 'astro:components';
 import { code } from "./code.astro";
-const matches = await import.meta.glob("./index.mdx", { eager: true });
+const matches = import.meta.glob("./index.mdx", { eager: true });
 const posts = Object.values(matches) as any[];
 const content = posts[0];
 ---
@@ -15,7 +15,7 @@ const content = posts[0];
                     <div class="mt-4" dir="rtl">
                         <content.default />
                     </div>
-                    <Prism lang="jsx" code={code} class="w-full overflow-hidden rounded-lg" />
+                    <Code lang="js" code={code} contextmenu={"test"} class="w-full overflow-hidden rounded-lg p-5"  />
                 </div>
             )
         }
@@ -23,8 +23,6 @@ const content = posts[0];
 </BlogLayout>
 
 <style is:global>
-    /* src/styles/prism-line-numbers.css */
-
     .shiki pre {
         counter-reset: line;
     }
