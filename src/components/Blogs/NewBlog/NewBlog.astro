@@ -1,0 +1,15 @@
+---
+import Blog from "../Blog/Blog.astro";
+import { blogsPeek } from "../BlogsLIst/BlogsList.astro";
+
+const latestBlogs = blogsPeek
+    .slice()
+    .sort((a, b) => new Date(b.createAt).getTime() - new Date(a.createAt).getTime())
+    .slice(0, 2);
+---
+
+<div class="w-full">
+    <div class="flex items-center justify-center flex-wrap gap-5 w-full">
+        {latestBlogs.map((blog) => <Blog {...blog} />)}
+    </div>
+</div>

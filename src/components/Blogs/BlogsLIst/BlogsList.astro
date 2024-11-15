@@ -1,0 +1,32 @@
+---
+import Blog from "../Blog/Blog.astro";
+
+type BlogTypes = "Web Development" | "Mobile Development" | "UI/UX" | "Other";
+type BlogTags = "astro" | "typescript" | "javascript" | "tailwindcss" | "react" | "next" | "vue" | "flutter" | "other";
+
+export interface BlogsProps {
+    title: string;
+    blogId: number | string;
+    desc: string;
+    type: BlogTypes;
+    tags: BlogTags[];
+    createAt: string;
+}
+
+export const blogsPeek: BlogsProps[] = [
+    {
+        title: "اول مدونة في الموقع",
+        blogId: "first-blog-in-the-site",
+        desc: "السلام عليكم هذة اول مدونة في الموقع",
+        createAt: "2023-01-01",
+        tags: ["astro", "typescript"],
+        type: "Web Development",
+    },
+];
+---
+
+<div class="w-full">
+    <div class="flex items-center justify-center flex-wrap gap-5 w-full">
+        {blogsPeek.map((blog) => <Blog {...blog} />)}
+    </div>
+</div>

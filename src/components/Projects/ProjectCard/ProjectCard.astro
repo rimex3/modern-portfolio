@@ -1,0 +1,22 @@
+---
+import type { ProjectProps } from "../ProjectsPage/ProjectsPage.astro";
+
+const { title, imgUrl, desc, url } = Astro.props as ProjectProps;
+---
+
+<div class="bg-[#31363F] w-fit h-fit rounded-xl p-5 text-white">
+    <div>
+        <img src={imgUrl} alt="me" width="300" height="300" class="h-[300px] rounded-md object-cover overflow-hidden" />
+    </div>
+    <div class="w-full mt-3">
+        <h1 class="text-[1.5rem] w-full text-center font-bold">{title}</h1>
+
+        <p class="text-[1.1rem] text-[#EEEEEE] my-5">
+            {desc}
+        </p>
+    </div>
+
+    <a href={url} target={url.startsWith("http") || url.startsWith("https") ? "_blank" : "_self"} class="text-white font-medium text-[1.1rem]">
+        <div class="active:scale-90 bg-[#76ABAE] p-2 w-full rounded-md transition-all flex items-center justify-center font-medium">View Project</div>
+    </a>
+</div>

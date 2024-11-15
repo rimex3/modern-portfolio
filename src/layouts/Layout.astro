@@ -1,6 +1,8 @@
 ---
+import InformationSection from "../components/InformationsSection/InformationSection.astro";
+import Header from "./Header.astro";
 interface Props {
-	title: string;
+    title: string;
 }
 
 const { title } = Astro.props;
@@ -8,43 +10,90 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content="Astro description" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet" />
+        <title>{title}</title>
+    </head>
+    <body class="bg-[#222831]">
+        <main class="container mx-auto my-5 w-full" data-swup>
+            <Header />
+            <div class="flex items-start gap-7 mt-5 w-full">
+                <InformationSection />
+                <div class="transition-main w-full">
+                    <slot />
+                </div>
+            </div>
+        </main>
+    </body>
 </html>
+
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
+
+    html {
+        font-family: "Cairo", sans-serif;
+        font-weight: normal;
+        font-style: normal;
+    }
+
+   * {
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+   }
+
+   a {
+       text-decoration: none;
+   }
+
+    .swup-progress-bar {
+        height: 1px;
+        background-color: #76abae;
+    }
+
+    .is-changing .transition-main {
+        transition-property: opacity, transform;
+        transition-duration: 250ms;
+    }
+
+    html.is-animating .transition-main {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    html.is-leaving .transition-main {
+        transform: translateY(20px);
+    }
+
+    #items.is-changing {
+        --duration-leave: 150ms;
+        --duration-enter: 400ms;
+        transition-duration: var(--duration-enter);
+    }
+
+    #items.is-leaving {
+        transition-duration: var(--duration-leave);
+    }
+
+    #items.is-changing .list_item {
+        transition-property: opacity, transform;
+        transition-duration: var(--duration-enter);
+        transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    #items.is-animating .list_item {
+        opacity: 0;
+        transform: scale(0.75);
+    }
+
+    #items.is-leaving .list_item {
+        transition-timing-function: ease-in;
+        transition-duration: var(--duration-leave);
+    }
 </style>

@@ -1,0 +1,29 @@
+---
+import ProjectCard from "../ProjectCard/ProjectCard.astro";
+
+export interface ProjectProps {
+    title: string;
+    imgUrl: string;
+    desc: string;
+    url: string;
+}
+
+export const projectsList: ProjectProps[] = [
+    {
+        title: "Project 1",
+        imgUrl: "/me.jpg",
+        desc: "this is project 1",
+        url: "#",
+    },
+    {
+        title: "Project 1",
+        imgUrl: "/me.jpg",
+        desc: "this is project 1",
+        url: "#",
+    },
+];
+---
+
+<div class="bg-transparent w-full h-fit rounded-md text-white flex items-center justify-start gap-5 flex-wrap">
+    {projectsList.map((project) => <ProjectCard {...project} />)}
+</div>

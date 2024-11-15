@@ -1,0 +1,10 @@
+---
+import ProjectCard from "../ProjectCard/ProjectCard.astro";
+import { projectsList } from "../ProjectsPage/ProjectsPage.astro"
+
+const latestProjects = projectsList.slice(0, 3);
+---
+
+<div class="bg-transparent w-full h-fit rounded-md text-white flex items-center justify-start gap-5 flex-wrap">
+    {latestProjects.map((project) => <ProjectCard {...project} />)}
+</div>
