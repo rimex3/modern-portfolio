@@ -22,32 +22,4 @@ description: 'مقدمة لاستخدام MDX مع Astro والمحتوى الد
 
 إليك كيفية عرض عنوان من MDX بشكل ديناميكي: 
 
-```jsx
 
-    <!doctype html>
-    <html>
-        <head>
-            <meta charset="UTF-8" />
-            <meta name="description" content="وصف Astro" />
-            <meta name="viewport" content="width=device-width" />
-            <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-            <meta name="generator" content={Astro.generator} />
-            <link rel="preconnect" href="https://fonts.googleapis.com" />
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-            <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet" />
-            <title>{title}</title>
-        </head>
-        <body class="bg-[#222831]">
-            <main class="container mx-auto my-5" data-swup>
-                <Header />
-                <div class="flex items-start gap-7 mt-5">
-                    <InformationSection />
-                    <div class="transition-main">
-                        <slot />
-                    </div>
-                </div>
-            </main>
-        </body>
-    </html>
-
-```

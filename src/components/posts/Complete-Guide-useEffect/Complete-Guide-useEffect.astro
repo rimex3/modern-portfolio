@@ -1,22 +1,26 @@
 ---
 import BlogLayout from "../../../layouts/BlogLayout.astro";
 
-const matches = await import.meta.glob("../../../components/posts/Complete-Guide-useEffect/*.mdx", { eager: true });
+const matches = await import.meta.glob(["./index.mdx", "./code.mdx"], { eager: true });
 const posts = Object.values(matches) as any[];
+
+const code = posts[0];
+const content = posts[1];
 ---
 
-<BlogLayout headers={posts[0].getHeadings()}>
+<BlogLayout headers={content.getHeadings()}>
     <div class="bg-[#31363F] w-fit h-fit rounded-xl p-5 px-10 text-white shadow-lg">
         {
-            posts.map((post) => (
+            (
                 <div class="space-y-5">
-                    <h2 class="text-xl font-bold text-[#00adb5]">{post.title}</h2>
-
                     <div class="mt-4" dir="rtl">
-                        <post.default />
+                        <content.default />
+                    </div>
+                    <div>
+                        <code.default />
                     </div>
                 </div>
-            ))
+            )
         }
     </div>
 </BlogLayout>
