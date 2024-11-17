@@ -2,6 +2,7 @@ import { defineConfig } from "astro/config";
 import swup from "@swup/astro";
 import tailwind from "@astrojs/tailwind";
 import mdx from "@astrojs/mdx";
+import svelte from "@astrojs/svelte";
 
 export default defineConfig({
     integrations: [
@@ -23,6 +24,7 @@ export default defineConfig({
         mdx({
             optimize: true,
         }),
+        svelte(),
     ],
     markdown: {
         syntaxHighlight: "prism",

@@ -1,17 +1,25 @@
 ---
+import { routerTree } from "../../../utils/rotuerTree/routerTree.astro";
 import { type BlogsProps } from "../BlogsLIst/BlogsList.astro";
 
 const { title, blogId, createAt, desc, tags, type } = Astro.props as BlogsProps;
 ---
 
-<div class="bg-[#31363F] w-full flex items-start justify-between h-[190px] rounded-xl p-5 text-white">
-    <div class="w-full mr-16">
+<div class="bg-[#31363F] w-full flex items-start justify-between rounded-xl p-5 text-white h-fit">
+    <div class="w-full mr-16 h-full">
         <div class="flex items-center h-[50px]">
             <div class="bg-[#76ABAE] h-[3px] w-[30px] rotate-90 rounded-full my-2"></div>
-            <h2 class="text-2xl font-bold text-white">{title}</h2>
+            <a href={`/blogs/${blogId}`} class="text-2xl font-bold text-white flex items-center hover:text-[#76ABAE] transition-all group max-lg:text-[1.2rem]">
+                {title}
+                <div class="flex items-center gap-2 opacity-0  text-[#76ABAE] group-hover:translate-x-2 group-hover:opacity-100  transition-all">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-7 text-[#76ABAE]">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
+                    </svg>
+                </div>
+            </a>
         </div>
 
-        <div class="flex items-center gap-5 ml-7 w-full">
+        <div class="flex items-center gap-5 ml-7 w-full max-lg:ml-0">
             <div class="flex items-center gap-2">
                 <div class="bg-[#222831] h-[35px] w-[35px] rounded-lg flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 text-[#76ABAE]">
@@ -22,7 +30,7 @@ const { title, blogId, createAt, desc, tags, type } = Astro.props as BlogsProps;
                         ></path>
                     </svg>
                 </div>
-                <p class="text-[1rem] text-[#EEEEEE] my-5">{createAt}</p>
+                <p class="text-[1rem] text-[#EEEEEE] my-5 max-lg:text-[0.9rem]">{createAt}</p>
             </div>
 
             <div class="flex items-center gap-2">
@@ -35,10 +43,10 @@ const { title, blogId, createAt, desc, tags, type } = Astro.props as BlogsProps;
                         ></path>
                     </svg>
                 </div>
-                <p class="text-[1rem] text-[#EEEEEE] my-5">{type}</p>
+                <p class="text-[1rem] text-[#EEEEEE] my-5 max-lg:text-[0.9rem]">{type}</p>
             </div>
 
-            <div class="flex items-center gap-2">
+            <div class="flex items-center gap-2 max-lg:hidden">
                 <div class="bg-[#222831] h-[35px] w-[35px] rounded-lg flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 text-[#76ABAE]">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 8.25h15m-16.5 7.5h15m-1.8-13.5-3.9 19.5m-2.1-19.5-3.9 19.5"></path>
@@ -55,13 +63,12 @@ const { title, blogId, createAt, desc, tags, type } = Astro.props as BlogsProps;
                 </p>
             </div>
         </div>
-        <p dir="rtl" class="text-[1.1rem] text-[#EEEEEE] ml-7 w-full">
+        <p dir="rtl" class="text-[1.1rem] text-[#EEEEEE] ml-7 w-full max-lg:text-[0.9rem] max-lg:ml-0">
             {desc}
         </p>
     </div>
-
-    <a href={`/blogs/${blogId}`} class="h-full active:scale-90 transition-all">
-        <div class="bg-[#222831] h-full w-[40px] flex items-center justify-center rounded-xl">
+    <a href={`/blogs/${blogId}`} class="h-[160px] max-lg:hidden">
+        <div class="bg-[#222831] hover:bg-[#222831ea] transition-all h-full w-[50px] flex items-center justify-center rounded-xl">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-[#76ABAE]">
                 <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
             </svg>

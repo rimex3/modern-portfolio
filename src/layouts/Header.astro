@@ -1,57 +1,15 @@
 ---
+import ToggleMenu from "../components/ToggleMenu/ToggleMenu.svelte";
 const { pathname } = Astro.url;
 ---
 
-<header class="w-full bg-[#31363F] h-[80px] rounded-xl flex items-center px-10">
-    <nav class="flex items-center justify-between w-full">
+<header class="w-full bg-[#31363F] h-[80px] rounded-xl flex items-center px-10 ">
+    <nav class="flex items-center justify-between w-full relative">
         <div>
             <h2>
                 <a href="/" class="text-[2rem] w-full text-start font-bold text-[#76ABAE]">Ahmedx3</a>
             </h2>
         </div>
-        <ul class="flex items-center gap-2 text-white font-bold text-[1.1rem] list-none">
-            <li class="active:scale-90 transition-all">
-                <a class="cursor-pointer z-10 p-2 w-[100px] text-white text-center h-[50px] flex items-center justify-center relative overflow-hidden group rounded-md" href="/">
-                    <span class="relative z-10">Home</span>
-
-                    <span class="absolute inset-0 bg-[#222831] transform scale-0 group-hover:scale-110 transition-all duration-300 ease-in-out rounded-md"></span>
-                    <span
-                        class={`absolute inset-x-0 bottom-0 right-1/2 left-1/2 -translate-x-1/2 h-[2px] bg-[#76ABAE] transform scale-x-0 transition-all duration-300 ease-in-out w-[50px] ${pathname === "/" ? "scale-x-100" : ""}`}
-                    ></span>
-                </a>
-            </li>
-            <li class="active:scale-90 transition-all">
-                <a class="cursor-pointer text-white p-2 w-[100px] text-center h-[50px] flex items-center justify-center relative overflow-hidden group rounded-md" href="/projects">
-                    <span class="relative z-10">Projects</span>
-
-                    <span class="absolute inset-0 bg-[#222831] transform scale-0 group-hover:scale-110 transition-all duration-300 ease-in-out rounded-md"></span>
-                    <span
-                        class={`absolute inset-x-0 bottom-0 right-1/2 left-1/2 -translate-x-1/2 h-[2px] bg-[#76ABAE] transform scale-x-0 transition-all duration-300 ease-in-out w-[50px] ${pathname === "/projects" ? "scale-x-100" : ""}`}
-                    ></span>
-                </a>
-            </li>
-            <li class="active:scale-90 transition-all">
-                <a class="cursor-pointer text-white p-2 w-[100px] text-center h-[50px] flex items-center justify-center relative overflow-hidden group rounded-md" href="/blogs">
-                    <span class="relative z-10">Blogs</span>
-
-                    <span class="absolute inset-0 bg-[#222831] transform scale-0 group-hover:scale-110 transition-all duration-300 ease-in-out rounded-md"></span>
-                    <span
-                        class={`absolute inset-x-0 bottom-0 right-1/2 left-1/2 -translate-x-1/2 h-[2px] bg-[#76ABAE] transform scale-x-0 transition-all duration-300 ease-in-out w-[50px] ${pathname === "/blogs" ? "scale-x-100" : ""}`}
-                    ></span>
-                </a>
-            </li>
-            <li class="active:scale-90 transition-all">
-                <a class="cursor-pointer text-white p-2 w-[100px] text-center h-[50px] flex items-center justify-center relative overflow-hidden group rounded-md" href="/about">
-                    <span class="relative z-10">About</span>
-
-                    <span class="absolute inset-0 bg-[#222831] transform scale-0 group-hover:scale-110 transition-all duration-300 ease-in-out rounded-md"></span>
-                    <span
-                        class={`absolute inset-x-0 bottom-0 right-1/2 left-1/2 -translate-x-1/2 h-[2px] bg-[#76ABAE] transform scale-x-0 transition-all duration-300 ease-in-out w-[50px] ${pathname === "/about" ? "scale-x-100" : ""}`}
-                    ></span>
-                </a>
-            </li>
-        </ul>
-
-        <div></div>
+        <ToggleMenu pathname={pathname} client:load />
     </nav>
 </header>

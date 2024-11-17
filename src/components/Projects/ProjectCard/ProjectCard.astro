@@ -4,8 +4,8 @@ import type { ProjectProps } from "../ProjectsPage/ProjectsPage.astro";
 const { title, imgUrl, desc, url } = Astro.props as ProjectProps;
 ---
 
-<div class="bg-[#31363F] w-fit h-fit rounded-xl p-5 text-white">
-    <div>
+<div class="bg-[#31363F] w-fit h-fit rounded-xl p-5 text-white max-sm:w-full ">
+    <div class="max-lg:flex items-center justify-center">
         <img src={imgUrl} alt="me" width="300" height="300" class="h-[300px] rounded-md object-cover overflow-hidden" />
     </div>
     <div class="w-full mt-3">

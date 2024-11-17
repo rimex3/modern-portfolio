@@ -1,10 +1,11 @@
 ---
+import { routerTree } from "../../../utils/rotuerTree/routerTree.astro";
 import type { BlogsProps } from "./BlogsList.astro";
 
 export const blogsPeek: BlogsProps[] = [
     {
         title: "اول مدونة في الموقع",
-        blogId: "first-blog-in-the-site",
+        blogId: routerTree.firstBlogInTheSite,
         desc: "السلام عليكم هذة اول مدونة في الموقع",
         createAt: "2024-11-15",
         tags: ["astro", "typescript"],
