@@ -1,1 +1,1 @@
-This is my blog using Astro 🚀 
+This is my portfolio using Astro 🚀 
