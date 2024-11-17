@@ -6,7 +6,7 @@ interface BlogLayoutProps {
 const { headers } = Astro.props as BlogLayoutProps;
 ---
 
-<section class="flex items-start flex-row-reverse gap-5">
+<section class="flex items-start max-lg:items-center max-lg:justify-center flex-row-reverse gap-5">
     <aside class="sticky top-0 w-1/4 max-lg:hidden">
         <ul class="space-y-5">
             {headers.map((heading) => <li class="text-sm text-custom hover:text-white cursor-pointer"><a href={`#${heading.text.toLowerCase().replace(/\s+/g, "-")}`}>{heading.text}</a></li>)}
