@@ -32,7 +32,7 @@
                 <span class="relative z-10">Projects</span>
                 <span class={`absolute inset-0 bg-bg-primary transform scale-0 group-hover:scale-110 transition-all duration-300 ease-in-out rounded-md`}></span>
                 <span
-                    class={`absolute inset-x-0 bottom-0 right-1/2 left-1/2 -translate-x-1/2 h-[2px] bg-third transform scale-x-0 transition-all duration-300 ease-in-out w-[50px] ${pathname === "/projects/" ? "scale-x-100" : ""}`}
+                    class={`absolute inset-x-0 bottom-0 right-1/2 left-1/2 -translate-x-1/2 h-[2px] bg-third transform scale-x-0 transition-all duration-300 ease-in-out w-[50px] ${pathname.startsWith("/projects") ? "scale-x-100" : ""}`}
                 ></span>
             </a>
         </li>
@@ -41,7 +41,7 @@
                 <span class="relative z-10">Blogs</span>
                 <span class={`absolute inset-0 bg-bg-primary transform scale-0 group-hover:scale-110 transition-all duration-300 ease-in-out rounded-md`}></span>
                 <span
-                    class={`absolute inset-x-0 bottom-0 right-1/2 left-1/2 -translate-x-1/2 h-[2px] bg-third transform scale-x-0 transition-all duration-300 ease-in-out w-[50px] ${pathname === "/blogs/" ? "scale-x-100" : ""}`}
+                    class={`absolute inset-x-0 bottom-0 right-1/2 left-1/2 -translate-x-1/2 h-[2px] bg-third transform scale-x-0 transition-all duration-300 ease-in-out w-[50px] ${pathname.startsWith("/blogs") ? "scale-x-100" : ""}`}
                 ></span>
             </a>
         </li>
@@ -50,7 +50,7 @@
                 <span class="relative z-10">About</span>
                 <span class={`absolute inset-0 bg-bg-primary transform scale-0 group-hover:scale-110 transition-all duration-300 ease-in-out rounded-md`}></span>
                 <span
-                    class={`absolute inset-x-0 bottom-0 right-1/2 left-1/2 -translate-x-1/2 h-[2px] bg-third transform scale-x-0 transition-all duration-300 ease-in-out w-[50px] ${pathname === "/about/" ? "scale-x-100" : ""}`}
+                    class={`absolute inset-x-0 bottom-0 right-1/2 left-1/2 -translate-x-1/2 h-[2px] bg-third transform scale-x-0 transition-all duration-300 ease-in-out w-[50px] ${pathname.startsWith("/about") ? "scale-x-100" : ""}`}
                 ></span>
             </a>
         </li>
