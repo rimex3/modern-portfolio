@@ -1,19 +1,18 @@
 ---
 import { colors } from "../../../utils/colors/colors.constants.astro";
-import { routerTree } from "../../../utils/rotuerTree/routerTree.astro";
 import { type BlogsProps } from "../BlogsLIst/BlogsList.astro";
 
 const { title, blogId, createAt, desc, tags, type } = Astro.props as BlogsProps;
 ---
 
-<div class={`bg-[${colors.secondary}] w-full flex items-start justify-between rounded-xl p-5 text-white h-fit`}>
+<div class={`bg-secondary w-full flex items-start justify-between rounded-xl p-5 text-white h-fit`}>
     <div class="w-full mr-16 h-full">
         <div class="flex items-center h-[50px]">
-            <div class={`bg-[#76ABAE] h-[3px] w-[30px] rotate-90 rounded-full my-2`}></div>
-            <a href={`/blogs/${blogId}`} class="text-2xl font-bold text-white flex items-center hover:text-[#76ABAE] transition-all group max-lg:text-[1.2rem]">
+            <div class={`bg-third h-[3px] w-[30px] rotate-90 rounded-full my-2`}></div>
+            <a href={`/blogs/${blogId}`} class="text-2xl font-bold text-white flex items-center hover:text-third transition-all group max-lg:text-[1.2rem]">
                 {title}
-                <div class={`flex items-center gap-2 opacity-0  text-[#76ABAE] group-hover:translate-x-2 group-hover:opacity-100  transition-all`}>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class={`size-7 text-[#76ABAE]`}>
+                <div class={`flex items-center gap-2 opacity-0  text-third group-hover:translate-x-2 group-hover:opacity-100  transition-all`}>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class={`size-7 text-third`}>
                         <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
                     </svg>
                 </div>
@@ -22,8 +21,8 @@ const { title, blogId, createAt, desc, tags, type } = Astro.props as BlogsProps;
 
         <div class="flex items-center gap-5 ml-7 w-full max-lg:ml-0">
             <div class="flex items-center gap-2">
-                <div class={`bg-[${colors.primary}] h-[35px] w-[35px] rounded-lg flex items-center justify-center`}>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class={`size-5 text-[#76ABAE]`}>
+                <div class={`bg-bg-primary h-[35px] w-[35px] rounded-lg flex items-center justify-center`}>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class={`size-5 text-third`}>
                         <path
                             stroke-linecap="round"
                             stroke-linejoin="round"
@@ -31,12 +30,12 @@ const { title, blogId, createAt, desc, tags, type } = Astro.props as BlogsProps;
                         ></path>
                     </svg>
                 </div>
-                <p class={`text-[1rem] text-[${colors.fourth}] my-5 max-lg:text-[0.9rem]`}>{createAt}</p>
+                <p class={`text-[1rem] text-fourth my-5 max-lg:text-[0.9rem]`}>{createAt}</p>
             </div>
 
             <div class="flex items-center gap-2">
-                <div class={`bg-[${colors.primary}] h-[35px] w-[35px] rounded-lg flex items-center justify-center`}>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width={1.5} stroke="currentColor" class={`size-5 text-[#76ABAE]`}>
+                <div class={`bg-bg-primary h-[35px] w-[35px] rounded-lg flex items-center justify-center`}>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width={1.5} stroke="currentColor" class={`size-5 text-third`}>
                         <path
                             stroke-linecap="round"
                             stroke-linejoin="round"
@@ -44,33 +43,33 @@ const { title, blogId, createAt, desc, tags, type } = Astro.props as BlogsProps;
                         ></path>
                     </svg>
                 </div>
-                <p class={`text-[1rem] text-[${colors.fourth}] my-5 max-lg:text-[0.9rem]`}>{type}</p>
+                <p class={`text-[1rem] text-fourth my-5 max-lg:text-[0.9rem]`}>{type}</p>
             </div>
 
             <div class="flex items-center gap-2 max-lg:hidden">
-                <div class={`bg-[${colors.primary}] h-[35px] w-[35px] rounded-lg flex items-center justify-center`}>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class={`size-5 text-[#76ABAE]`}>
+                <div class={`bg-bg-primary h-[35px] w-[35px] rounded-lg flex items-center justify-center`}>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class={`size-5 text-third`}>
                         <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 8.25h15m-16.5 7.5h15m-1.8-13.5-3.9 19.5m-2.1-19.5-3.9 19.5"></path>
                     </svg>
                 </div>
-                <p class={`text-[1rem] text-[${colors.fourth}] my-5`}>
+                <p class={`text-[1rem] text-fourth my-5`}>
                     {
                         tags?.map((tag) => (
                             <div>
-                                <span class={`text-[${colors.fourth}]`}> {tag}</span> <span class={`text-[#76ABAE]`}>/</span>
+                                <span class={`text-fourth`}> {tag}</span> <span class={`text-third`}>/</span>
                             </div>
                         ))
                     }
                 </p>
             </div>
         </div>
-        <p dir="rtl" class={`text-[1.1rem] text-[${colors.fourth}] ml-7 w-full max-lg:text-[0.9rem] max-lg:ml-0`}>
+        <p dir="rtl" class={`text-[1.1rem] text-fourth ml-7 w-full max-lg:text-[0.9rem] max-lg:ml-0`}>
             {desc}
         </p>
     </div>
     <a href={`/blogs/${blogId}`} class="h-[160px] max-lg:hidden">
-        <div class={`bg-[${colors.primary}] hover:bg-opacity-90 transition-all h-full w-[50px] flex items-center justify-center rounded-xl`}>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class={`size-6 text-[#76ABAE]`}>
+        <div class={`bg-primary hover:bg-opacity-90 transition-all h-full w-[50px] flex items-center justify-center rounded-xl`}>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class={`size-6 text-third`}>
                 <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
             </svg>
         </div>

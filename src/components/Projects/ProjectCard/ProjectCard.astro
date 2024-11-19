@@ -5,7 +5,7 @@ import type { ProjectProps } from "../ProjectsPage/ProjectsPage.astro";
 const { title, imgUrl, desc, url } = Astro.props as ProjectProps;
 ---
 
-<div class={`bg-[${colors.secondary}] w-full h-full rounded-xl p-5 text-white flex flex-col max-sm:w-full min-h-[600px]`}>
+<div class={`bg-secondary w-full h-full rounded-xl p-5 text-white flex flex-col max-sm:w-full min-h-[600px]`}>
     <div class="flex-grow flex flex-col">
         <div class="flex items-center justify-center w-full h-[300px]">
             <img src={imgUrl} alt="me" width="350" height="300" class="h-full w-full rounded-lg object-cover overflow-hidden" />
@@ -13,13 +13,13 @@ const { title, imgUrl, desc, url } = Astro.props as ProjectProps;
 
         <div class="w-full mt-3 flex-grow flex flex-col items-center justify-center">
             <h1 class="text-[1.5rem] w-full text-center font-bold">{title}</h1>
-            <p class={`text-[1.1rem] text-[${colors.fourth}] my-1 mb-5 w-full max-w-[350px] text-center`}>
+            <p class={`text-[1.1rem] text-fourth my-1 mb-5 w-full max-w-[350px] text-center`}>
                 {desc}
             </p>
         </div>
     </div>
 
     <a href={url} target={url.startsWith("http") || url.startsWith("https") ? "_blank" : "_self"} class="text-white font-medium text-[1.1rem]">
-        <div class={`active:scale-90 bg-[#76ABAE] p-2 w-full rounded-md transition-all flex items-center justify-center font-medium`}>View Project</div>
+        <div class={`active:scale-90 bg-third p-2 w-full rounded-md transition-all flex items-center justify-center font-medium`}>View Project</div>
     </a>
 </div>
