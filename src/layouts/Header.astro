@@ -1,15 +1,16 @@
 ---
 import ToggleMenu from "../components/ToggleMenu/ToggleMenu.svelte";
+import { colors, type Colors } from "../utils/colors/colors.constants.astro";
 const { pathname } = Astro.url;
 ---
 
-<header class="w-full bg-[#31363F] h-[80px] rounded-xl flex items-center px-10 ">
+<header class={`w-full bg-[${colors.secondary}] h-[80px] rounded-xl flex items-center px-10`}>
     <nav class="flex items-center justify-between w-full relative">
         <div>
             <h2>
                 <a href="/" class="text-[2rem] w-full text-start font-bold text-[#76ABAE]">Ahmedx3</a>
             </h2>
         </div>
-        <ToggleMenu pathname={pathname} client:load />
+        <ToggleMenu pathname={pathname} colors={colors as Colors} client:load />
     </nav>
 </header>

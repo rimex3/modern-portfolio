@@ -1,21 +1,22 @@
 ---
 import BlogLayout from "../../../layouts/BlogLayout.astro";
-import { Code } from 'astro:components';
+import { Code } from "astro:components";
 import { code } from "./code.astro";
+import { colors } from "../../../utils/colors/colors.constants.astro";
 const matches = import.meta.glob("./index.mdx", { eager: true });
 const posts = Object.values(matches) as any[];
 const content = posts[0];
 ---
 
 <BlogLayout headers={content.getHeadings()}>
-    <div class="bg-[#31363F] w-fit h-fit rounded-xl p-5 px-10 text-white shadow-lg">
+    <div class={`bg-[${colors.secondary}] w-fit h-fit rounded-xl p-5 px-10 text-white shadow-lg`}>
         {
             (
                 <div class="space-y-5">
                     <div class="mt-4" dir="rtl">
                         <content.default />
                     </div>
-                    <Code lang="js" code={code} contextmenu={"test"} class="w-full overflow-hidden rounded-lg p-5"  />
+                    <Code lang="js" code={code} contextmenu={"test"} class="w-full overflow-hidden rounded-lg p-5" />
                 </div>
             )
         }
