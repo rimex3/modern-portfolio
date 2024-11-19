@@ -1,6 +1,5 @@
 <script>
     export let pathname;
-    export let colors;
     let menuVisible = false;
 
     const toggleMenu = () => {

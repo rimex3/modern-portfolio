@@ -2,7 +2,6 @@
 import BlogLayout from "../../../layouts/BlogLayout.astro";
 import { Code } from "astro:components";
 import { code } from "./code.astro";
-import { colors } from "../../../utils/colors/colors.constants.astro";
 const matches = import.meta.glob("./index.mdx", { eager: true });
 const posts = Object.values(matches) as any[];
 const content = posts[0];

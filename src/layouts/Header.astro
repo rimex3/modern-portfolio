@@ -1,6 +1,6 @@
 ---
 import ToggleMenu from "../components/ToggleMenu/ToggleMenu.svelte";
-import { colors, type Colors } from "../utils/colors/colors.constants.astro";
+
 const { pathname } = Astro.url;
 ---
 
@@ -11,6 +11,6 @@ const { pathname } = Astro.url;
                 <a href="/" class="text-[2rem] w-full text-start font-bold text-third">Ahmedx3</a>
             </h2>
         </div>
-        <ToggleMenu pathname={pathname} colors={colors as Colors} client:load />
+        <ToggleMenu pathname={pathname} client:load />
     </nav>
 </header>
