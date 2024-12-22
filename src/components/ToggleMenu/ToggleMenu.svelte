@@ -18,7 +18,7 @@
         class="flex-col lg:flex-row items-center max-lg:w-[150px] max-lg:justify-center z-10 gap-2 text-white font-bold text-[1.1rem] list-none lg:flex max-lg:absolute max-lg:bg-[#212731] max-lg:rounded-lg max-lg:text-[0.9rem] max-lg:-right-[14px]"
         class:hidden={!menuVisible}
     >
-        <li class="active:scale-90 transition-all max-lg:flex items-center justify-center">
+        <li class="active:scale-90 transition-all max-lg:flex items-center justify-center hover:bg-[#202F3F] rounded-lg" >
             <a class="cursor-pointer z-10 p-2 w-[100px] text-white text-center h-[50px] flex items-center justify-center relative overflow-hidden group rounded-md" href="/">
                 <span class="relative z-10">Home</span>
                 <span class={`absolute inset-0 bg-bg-primary transform scale-0 group-hover:scale-110 transition-all duration-300 ease-in-out rounded-md`}></span>
@@ -27,7 +27,7 @@
                 ></span>
             </a>
         </li>
-        <li class="active:scale-90 transition-all max-lg:flex items-center justify-center">
+        <li class="active:scale-90 transition-all max-lg:flex items-center justify-center hover:bg-[#202F3F] rounded-lg">
             <a class="cursor-pointer z-10 p-2 w-[100px] text-white text-center h-[50px] flex items-center justify-center relative overflow-hidden group rounded-md" href="/projects">
                 <span class="relative z-10">Projects</span>
                 <span class={`absolute inset-0 bg-bg-primary transform scale-0 group-hover:scale-110 transition-all duration-300 ease-in-out rounded-md`}></span>
@@ -36,7 +36,7 @@
                 ></span>
             </a>
         </li>
-        <li class="active:scale-90 transition-all max-lg:flex items-center justify-center">
+        <li class="active:scale-90 transition-all max-lg:flex items-center justify-center hover:bg-[#202F3F] rounded-lg">
             <a class="cursor-pointer z-10 p-2 w-[100px] text-white text-center h-[50px] flex items-center justify-center relative overflow-hidden group rounded-md" href="/blogs">
                 <span class="relative z-10">Blogs</span>
                 <span class={`absolute inset-0 bg-bg-primary transform scale-0 group-hover:scale-110 transition-all duration-300 ease-in-out rounded-md`}></span>
@@ -45,7 +45,7 @@
                 ></span>
             </a>
         </li>
-        <li class="active:scale-90 transition-all max-lg:flex items-center justify-center">
+        <li class="active:scale-90 transition-all max-lg:flex items-center justify-center hover:bg-[#202F3F] rounded-lg">
             <a class="cursor-pointer z-10 p-2 w-[100px] text-white text-center h-[50px] flex items-center justify-center relative overflow-hidden group rounded-md" href="/about">
                 <span class="relative z-10">About</span>
                 <span class={`absolute inset-0 bg-bg-primary transform scale-0 group-hover:scale-110 transition-all duration-300 ease-in-out rounded-md`}></span>
