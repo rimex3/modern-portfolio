@@ -20,7 +20,7 @@ export default function ProjectCard({ id, link, name,imgSrc }: ProjectCardProps)
                 blurDataURL={imgSrc}
                 width={300}
                 height={300}
-                className="w-[300px] h-[300px] object-cover"
+                className="w-[300px] h-[300px] object-cover group-hover:filter-none filter grayscale contrast-50 transition"
             />
 
             <Link
