@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 import Image from "next/image";
+import Footer from "@/components/footer";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -22,18 +23,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} antialiased bg-white py-[10px] px-[80px]`}>
+      <body className={`${poppins.variable} antialiased bg-white py-[10px] px-[80px] min-h-screen overflow-hidden flex flex-col justify-between`}>
         <Header />
-        <section className="w-full flex items-center space-x-20 bg-[#F6FBFF]">
-          <Image
-            src={"/1.webp"}
-            alt="1.webp"
-            width={500}
-            height={500}
-            className="w-[700px] h-[700px] object-cover"
-          />
-          {children}
+        <section className="w-full flex items-center justify-between space-x-20 bg-[#F6FBFF] min-h-[600px]">
+          <div className=" h-[600px] w-[40%] overflow-hidden">
+            <Image
+              src={"/1.webp"}
+              alt="1.webp"
+              width={500}
+              height={500}
+              className="h-full object-cover"
+            />
+          </div>
+          <div className="w-[60%]">
+            {children}
+          </div>
         </section>
+        <Footer />
       </body>
     </html>
   );

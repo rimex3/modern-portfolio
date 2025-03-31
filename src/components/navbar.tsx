@@ -14,7 +14,7 @@ export default function Navbar() {
                 <Link href={"/portfolio"} className={`text-[16px] py-2.5 px-10 ${pathname === "/portfolio" ? "text-white bg-[#333333]" : "text-[#333333] hover:bg-[#333333] hover:text-white transition-all duration-300"}`}>
                     Portfolio
                 </Link>
-                <Link href={"/contact"} className={`text-[16px] py-2.5 px-10 ${pathname === "/contact" ? "text-white bg-[#333333]" : "text-[#333333] hover:bg-[#333333] hover:text-white transition-all duration-300"}`}>
+                <Link href={"#"} className={`text-[16px] py-2.5 px-10 ${pathname === "/contact" ? "text-white bg-[#333333]" : "text-[#333333] hover:bg-[#333333] hover:text-white transition-all duration-300"}`}>
                     Contact
                 </Link>
             </div>
