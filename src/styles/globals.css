@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background: #F1F5F9;
+    color: #020206;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .text-gradient {
+    background: radial-gradient(circle at top left,#312e81 0,#020617 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+}

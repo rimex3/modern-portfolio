@@ -9,7 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "15.2.4",
+    "motion": "^12.6.5",
+    "next": "15.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
@@ -20,16 +21,8 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "15.2.4",
+    "eslint-config-next": "15.3.0",
     "tailwindcss": "^4",
     "typescript": "^5"
-  },
-  "pnpm": {
-    "ignoredBuiltDependencies": [
-      "sharp"
-    ],
-    "onlyBuiltDependencies": [
-      "sharp"
-    ]
   }
 }
