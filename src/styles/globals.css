@@ -15,12 +15,15 @@
   }
 
   .button-gradient {
-    background: radial-gradient(circle at 50% -90%, #c7d2fe 0, rgba(165, 180, 252, 0) 60%) no-repeat, linear-gradient(180deg, #6366f1, #4338ca);
+    background:
+      radial-gradient(circle at 50% -90%, #c7d2fe 0, rgba(165, 180, 252, 0) 60%) no-repeat,
+      linear-gradient(180deg, #6366f1, #4338ca);
   }
 
   .button-gradient-container {
     background: radial-gradient(circle at center, #6366f1 0, #4f46e5 100%);
   }
+
 
   @keyframes shimmer {
     0% {

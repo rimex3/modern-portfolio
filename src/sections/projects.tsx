@@ -2,19 +2,19 @@
 
 import ProjectCard from "@/components/project-card";
 import { cn } from "@/lib/cn";
-import { useScroll, useTransform, useSpring, motion } from "motion/react";
+import { useScroll, useTransform, useSpring, motion } from "framer-motion";
 
 export default function ProjectsSection() {
     const { scrollY } = useScroll();
 
-    const layer1X = useSpring(useTransform(scrollY, [0, 1000], [0, 500]), {
-        stiffness: 1000,
-        damping: 50,
+    const layer1X = useSpring(useTransform(scrollY, [0, 1000], [0, 600]), {
+        stiffness: 3000,
+        damping: 100,
     });
 
     const layer2X = useSpring(useTransform(scrollY, [0, 1000], [0, -300]), {
-        stiffness: 1000,
-        damping: 50,
+        stiffness: 3000,
+        damping: 100,
     });
 
     return (

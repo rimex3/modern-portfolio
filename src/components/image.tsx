@@ -5,19 +5,21 @@ import { ComponentPropsWithRef, use } from "react";
 
 
 interface ImageProps extends ComponentPropsWithRef<"img"> {
-
+    src: string
+    alt: string
 }
 
-export function Image({ src, alt }: { src: string, alt: string }) {
+export function Image({ src, alt, ...props }: ImageProps) {
     const imagePromise = createImageResource(src);
     const image = use(imagePromise)
 
-    return <img src={image.src} alt={alt} />
+    return <img src={image.src} alt={alt} loading="lazy" {...props} />
 }
 
 const cache = new Map<string, Promise<HTMLImageElement>>();
 
 function createImageResource(src: string) {
+    console.log(cache)
     let promise = cache.get(src);
     if (!promise) {
         promise = loadImage(src);
