@@ -1,3 +1,4 @@
+
 import Container from "./container"
 import Navbar from "./layout/navbar"
 
@@ -7,6 +8,7 @@ interface MainLayoutProps {
 }
 
 export default function MainLayout({ children }: MainLayoutProps) {
+
     return (
         <main className="w-full h-max overflow-x-hidden pt-7 pb-5">
             <Container>

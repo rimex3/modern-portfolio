@@ -21,4 +21,28 @@
   .button-gradient-container {
     background: radial-gradient(circle at center, #6366f1 0, #4f46e5 100%);
   }
+
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  .shimmer-overlay {
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    animation: shimmer 1.5s infinite;
+    background: linear-gradient(to right,
+        transparent,
+        rgba(255, 255, 255, 0.6),
+        transparent);
+    z-index: 1;
+    pointer-events: none;
+  }
+
 }
